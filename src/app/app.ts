@@ -68,8 +68,6 @@ export class App {
   ];
 
   protected readonly contactLinks = [
-    { label: 'GitHub', href: 'https://github.com/your-handle' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/your-handle/' },
-    { label: 'Email', href: 'mailto:hello@example.com' }
+    { label: 'GitHub', href: 'https://github.com/romulo-ribeiro' }
   ];
 }

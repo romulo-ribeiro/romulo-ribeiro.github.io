@@ -1,0 +1,32 @@
+<section class="hero-shell">
+  <div class="hero-copy">
+    <p class="eyebrow">{{ content().eyebrow }}</p>
+    <p class="hero-name">Romulo Ribeiro</p>
+    <h1>{{ content().title }}</h1>
+    <p class="hero-text">{{ content().body }}</p>
+
+    <div class="hero-actions">
+      <a pButton severity="primary" [rounded]="true" href="#projects">{{ content().primaryAction }}</a>
+      <a pButton severity="secondary" [rounded]="true" href="#contact">{{ content().secondaryAction }}</a>
+    </div>
+
+    <div class="hero-proof">
+      <p class="panel-label">{{ content().panelLabel }}</p>
+
+      <div class="proof-grid">
+        @for (item of stats(); track item.value) {
+          <article class="proof-item">
+            <strong>{{ item.value }}</strong>
+            <span>{{ item.label }}</span>
+          </article>
+        }
+      </div>
+
+      <p class="hero-note">{{ content().panelNote }}</p>
+    </div>
+  </div>
+
+  <figure class="hero-visual" aria-hidden="true">
+    <img src="/hero/engineering-surface.svg" alt="" />
+  </figure>
+</section>

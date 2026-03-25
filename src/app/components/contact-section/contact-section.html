@@ -1,0 +1,63 @@
+<section class="section-shell">
+  <div class="contact-shell">
+    <div class="contact-main">
+      <div class="contact-copy">
+        <p class="eyebrow">{{ content().eyebrow }}</p>
+        <h2>{{ content().title }}</h2>
+        <p class="contact-text">{{ content().body }}</p>
+      </div>
+
+      <div class="contact-links">
+        @for (item of contactLinks(); track item.label) {
+          <a pButton severity="secondary" [rounded]="true" [href]="item.href" target="_blank" rel="noreferrer">
+            <app-huge-icon [icon]="item.icon" [size]="18" [title]="item.label" />
+            <span>{{ item.label }}</span>
+          </a>
+        }
+      </div>
+    </div>
+
+    <form class="contact-form" (ngSubmit)="submitPlaceholderForm()">
+      <label class="field">
+        <span>{{ content().form.nameLabel }}</span>
+        <input
+          pInputText
+          type="text"
+          name="name"
+          [(ngModel)]="draftName"
+          [placeholder]="content().form.namePlaceholder"
+        />
+      </label>
+
+      <label class="field">
+        <span>{{ content().form.emailLabel }}</span>
+        <input
+          pInputText
+          type="email"
+          name="email"
+          [(ngModel)]="draftEmail"
+          [placeholder]="content().form.emailPlaceholder"
+        />
+      </label>
+
+      <label class="field">
+        <span>{{ content().form.messageLabel }}</span>
+        <textarea
+          pTextarea
+          name="message"
+          rows="5"
+          [(ngModel)]="draftMessage"
+          [placeholder]="content().form.messagePlaceholder"
+        ></textarea>
+      </label>
+
+      <button pButton severity="primary" [rounded]="true" type="submit">
+        {{ content().form.submitLabel }}
+      </button>
+
+      @if (content().form.note) {
+        <p class="form-note">{{ content().form.note }}</p>
+      }
+    </form>
+  </div>
+</section>

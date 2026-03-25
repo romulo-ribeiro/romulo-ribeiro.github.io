@@ -1,0 +1,73 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" [class.brand--active]="activeSection() === 'top'" href="#top">
+      <span class="brand__name">Romulo Ribeiro</span>
+      <span class="brand__role">Engineering + software</span>
+    </a>
+
+    <div class="header-actions">
+      <nav class="site-nav" aria-label="Primary">
+        @for (item of navItems(); track item.label) {
+          <a
+            [href]="item.href"
+            [class.is-active]="activeSection() === sectionFromHref(item.href)"
+          >
+            {{ item.label }}
+          </a>
+        }
+      </nav>
+
+      <div class="header-controls">
+        <button
+          type="button"
+          class="theme-toggle"
+          role="switch"
+          [attr.aria-checked]="isDarkMode()"
+          [attr.aria-label]="themeToggleAriaLabel()"
+          (click)="darkModeChange.emit(!isDarkMode())"
+        >
+          <app-huge-icon [icon]="themeIcon()" [size]="16" />
+          <span class="theme-switch" [class.theme-switch--active]="isDarkMode()">
+            <span class="theme-switch__thumb"></span>
+          </span>
+        </button>
+
+        <div class="language-picker">
+          <p-select
+            class="language-select"
+            [options]="selectLanguageOptions()"
+            [ngModel]="selectedLanguageOption()"
+            (ngModelChange)="languageChange.emit($event.code)"
+            optionLabel="label"
+            [ariaLabel]="languageLabel()"
+            panelStyleClass="language-select-overlay"
+          >
+            <ng-template #selectedItem let-selectedOption>
+              @if (selectedOption) {
+                <div class="language-template">
+                  <img
+                    class="language-template__flag"
+                    [src]="selectedOption.flagSrc"
+                    [alt]="selectedOption.label"
+                  />
+                  <span class="language-template__code">{{ selectedOption.shortLabel }}</span>
+                </div>
+              }
+            </ng-template>
+
+            <ng-template #item let-option>
+              <div class="language-template">
+                <img
+                  class="language-template__flag"
+                  [src]="option.flagSrc"
+                  [alt]="option.label"
+                />
+                <span class="language-template__code">{{ option.shortLabel }}</span>
+              </div>
+            </ng-template>
+          </p-select>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

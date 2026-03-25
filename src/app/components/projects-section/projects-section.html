@@ -1,0 +1,50 @@
+<section class="section-shell">
+  <div class="section-heading">
+    <p class="eyebrow">{{ content().eyebrow }}</p>
+    <h2>{{ content().title }}</h2>
+  </div>
+
+  <div class="work-grid">
+    @for (card of workCards(); track card.title) {
+      <article class="work-card">
+        <div class="card-topline">
+          <p class="card-index">0{{ $index + 1 }}</p>
+          <app-huge-icon [icon]="card.icon" [size]="18" [title]="card.title" />
+        </div>
+
+        <div class="card-media">
+          <p-carousel
+            [value]="card.slides"
+            [numVisible]="1"
+            [numScroll]="1"
+            [circular]="true"
+            [autoplayInterval]="4500"
+            [showIndicators]="true"
+            [showNavigators]="true"
+            styleClass="project-carousel"
+          >
+            <ng-template let-slide #item>
+              <img [src]="slide.src" [alt]="slide.alt" loading="lazy" />
+            </ng-template>
+          </p-carousel>
+        </div>
+
+        <div class="card-copy">
+          <h3>{{ card.title }}</h3>
+          <p class="summary">{{ card.summary }}</p>
+
+          <div class="tag-row">
+            @for (tag of card.tags; track tag) {
+              <span class="pill">{{ tag }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="card-side">
+          <p class="outcome">{{ card.outcome }}</p>
+          <a pButton severity="secondary" [rounded]="true" class="work-link" [href]="card.href">{{ card.linkLabel }}</a>
+        </div>
+      </article>
+    }
+  </div>
+</section>

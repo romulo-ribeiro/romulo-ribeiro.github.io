@@ -1,0 +1,23 @@
+<section class="section-shell section-split">
+  <div class="skills-overview">
+    <div class="section-heading">
+      <p class="eyebrow">{{ content().eyebrow }}</p>
+      <h2>{{ content().title }}</h2>
+    </div>
+
+    <div class="chip-grid">
+      @for (item of stack(); track item) {
+        <span class="pill">{{ item }}</span>
+      }
+    </div>
+  </div>
+
+  <div class="principles">
+    @for (item of principles(); track item.title) {
+      <article class="principle">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+    }
+  </div>
+</section>

@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.section-shell {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.about-copy {
+  max-width: 42rem;
+}
+
+.about-text {
+  font-size: clamp(1.02rem, 1.2vw, 1.12rem);
+}
+
+.quote {
+  margin: 0;
+  padding-top: 0.35rem;
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  font-size: clamp(1.35rem, 2.3vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+@media (max-width: 720px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,16 @@
+:host {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.huge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  color: currentColor;
+}
+
+:host ::ng-deep .huge-icon svg {
+  display: block;
+}

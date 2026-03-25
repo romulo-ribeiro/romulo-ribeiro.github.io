@@ -1,143 +1,36 @@
 <div class="page-shell">
-  <header class="site-header">
-    <a class="brand" href="#top">Romulo</a>
+  <app-site-header
+    [navItems]="navItems()"
+    [activeSection]="activeSection()"
+    [isDarkMode]="isDarkMode()"
+    [themeIcon]="isDarkMode() ? themeIcons.dark : themeIcons.light"
+    [themeToggleAriaLabel]="headerContent().themeToggleAria"
+    [currentLanguage]="language()"
+    [languageLabel]="headerContent().languageLabel"
+    [languageOptions]="languageOptions"
+    (darkModeChange)="setDarkMode($event)"
+    (languageChange)="setLanguage($event)"
+  />
 
-    <nav class="site-nav" aria-label="Primary">
-      @for (item of navItems; track item.label) {
-        <a [href]="item.href">{{ item.label }}</a>
-      }
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Chemical and software engineer</p>
-        <h1>Engineering systems, software, and the space between them.</h1>
-        <p class="hero-text">
-          I work across process thinking, technical analysis, and software
-          delivery. This portfolio is a clean single-page overview of that mix:
-          practical engineering background, solid web implementation, and a
-          preference for clear systems over noise.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button--primary" href="#projects">View projects</a>
-          <a class="button button--ghost" href="#contact">Get in touch</a>
-        </div>
-      </div>
-
-      <aside class="hero-panel" aria-label="Project summary">
-        <p class="panel-label">Profile summary</p>
-
-        <div class="stat-grid">
-          @for (item of stats; track item.value) {
-            <article class="stat-card">
-              <strong>{{ item.value }}</strong>
-              <span>{{ item.label }}</span>
-            </article>
-          }
-        </div>
-
-        <p class="panel-note">
-          Bridging engineering analysis and software delivery with a focus on
-          clarity, structure, and practical implementation.
-        </p>
-      </aside>
+  <main [class.language-transition]="isLanguageAnimating()">
+    <section class="page-section page-section--hero" id="top" data-section="top">
+      <app-hero-section [content]="heroContent()" [stats]="stats()" />
     </section>
 
-    <section class="section" id="about">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2>A portfolio for someone who builds with both domain knowledge and code.</h2>
-      </div>
-
-      <div class="about-grid">
-        <article class="surface-card">
-          <p>
-            My background in chemical engineering shapes how I approach software:
-            understand the process, map the variables, reduce ambiguity, and
-            build systems that are stable in real use. That mindset carries into
-            product work, internal tools, and technical applications.
-          </p>
-        </article>
-
-        <article class="surface-card surface-card--accent">
-          <p class="quote">
-            "Strong software starts with structured thinking, not decorative complexity."
-          </p>
-        </article>
-      </div>
+    <section class="page-section" id="about" data-section="about">
+      <app-about-section [content]="aboutContent()" />
     </section>
 
-    <section class="section" id="projects">
-      <div class="section-heading">
-        <p class="eyebrow">Projects</p>
-        <h2>Examples of the kinds of systems and products I like to build.</h2>
-      </div>
-
-      <div class="work-grid">
-        @for (card of workCards; track card.title) {
-          <article class="work-card">
-            <p class="card-index">0{{ $index + 1 }}</p>
-            <h3>{{ card.title }}</h3>
-            <p>{{ card.summary }}</p>
-            <p class="outcome">{{ card.outcome }}</p>
-
-            <div class="tag-row">
-              @for (tag of card.tags; track tag) {
-                <span>{{ tag }}</span>
-              }
-            </div>
-          </article>
-        }
-      </div>
+    <section class="page-section" id="projects" data-section="projects">
+      <app-projects-section [content]="projectsContent()" [workCards]="workCards()" />
     </section>
 
-    <section class="section section--split" id="skills">
-      <div>
-        <div class="section-heading">
-          <p class="eyebrow">Skills</p>
-          <h2>Technical tools backed by engineering discipline.</h2>
-        </div>
-
-        <div class="chip-grid">
-          @for (item of stack; track item) {
-            <span class="chip">{{ item }}</span>
-          }
-        </div>
-      </div>
-
-      <div class="principles">
-        @for (item of principles; track item.title) {
-          <article class="principle">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
-          </article>
-        }
-      </div>
+    <section class="page-section" id="skills" data-section="skills">
+      <app-skills-section [content]="skillsContent()" [stack]="stack()" [principles]="principles()" />
     </section>
 
-    <section class="section section--contact" id="contact">
-      <div class="section-heading">
-        <p class="eyebrow">Contact</p>
-        <h2>GitHub is the main public channel for projects and technical work.</h2>
-      </div>
-
-      <div class="contact-panel">
-        <p>
-          The project history, code, and ongoing work are available through the
-          GitHub profile linked below.
-        </p>
-
-        <div class="contact-links">
-          @for (item of contactLinks; track item.label) {
-            <a [href]="item.href" target="_blank" rel="noreferrer">
-              {{ item.label }}
-            </a>
-          }
-        </div>
-      </div>
+    <section class="page-section" id="contact" data-section="contact">
+      <app-contact-section [content]="contactContent()" [contactLinks]="contactLinks()" />
     </section>
   </main>
 </div>

@@ -1,0 +1,194 @@
+:host {
+  display: block;
+}
+
+.section-shell {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.work-grid {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+  overflow-x: clip;
+}
+
+.work-card {
+  display: grid;
+  grid-template-columns: 72px minmax(220px, 280px) minmax(0, 1fr) minmax(220px, 0.9fr);
+  align-items: stretch;
+  gap: 1.4rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+.work-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+  background: color-mix(in srgb, var(--accent-soft) 26%, transparent);
+}
+
+.card-topline,
+.card-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+  .card-media {
+    position: relative;
+    display: flex;
+    align-self: stretch;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  border: 1px solid var(--line);
+  background: var(--surface-subtle);
+  min-width: 0;
+  min-height: clamp(12rem, 18vw, 15rem);
+}
+
+:host ::ng-deep .project-carousel.p-carousel {
+  width: 100%;
+  height: 100%;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-content {
+  position: relative;
+  height: 100%;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-content-container,
+:host ::ng-deep .project-carousel .p-carousel-item-list,
+:host ::ng-deep .project-carousel .p-carousel-item,
+:host ::ng-deep .project-carousel .p-carousel-items-content,
+:host ::ng-deep .project-carousel .p-carousel-item-clone {
+  height: 100%;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-viewport {
+  overflow: hidden;
+  height: 100%;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-indicator-list {
+  position: absolute;
+  bottom: 0.8rem;
+  left: 50%;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%);
+}
+
+:host ::ng-deep .project-carousel .p-carousel-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-prev-button,
+:host ::ng-deep .project-carousel .p-carousel-next-button {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.2rem;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: rgba(255, 255, 255, 0.86);
+  transform: translateY(-50%);
+}
+
+:host ::ng-deep .project-carousel .p-carousel-prev-button:hover,
+:host ::ng-deep .project-carousel .p-carousel-next-button:hover {
+  background: transparent;
+  color: #fff;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-prev-button {
+  left: 0.75rem;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-next-button {
+  right: 0.75rem;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-prev-button .p-icon,
+:host ::ng-deep .project-carousel .p-carousel-next-button .p-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+:host ::ng-deep .project-carousel .p-carousel-indicator-button {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+}
+
+:host ::ng-deep .project-carousel .p-carousel-indicator-active .p-carousel-indicator-button {
+  background: #fff;
+}
+
+.card-index {
+  margin: 0;
+  color: var(--accent);
+}
+
+.summary {
+  max-width: 34rem;
+  font-size: 1.02rem;
+}
+
+.card-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.outcome {
+  color: var(--text);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.4rem;
+  align-items: center;
+}
+
+.work-link {
+  min-height: 2.7rem;
+  margin-top: auto;
+}
+
+@media (max-width: 960px) {
+  .work-card {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    padding: 1.25rem 0;
+  }
+
+  .card-media {
+    max-width: 25rem;
+    min-height: 13.5rem;
+  }
+
+  .tag-row {
+    margin-top: 0.2rem;
+  }
+}

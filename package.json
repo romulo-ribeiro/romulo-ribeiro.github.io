@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "pretest": "npm run verify:assets",
     "test": "npm run test:guards && ng test",
-    "test:guards": "node --test --test-isolation=none scripts/validate-portfolio-data.test.mjs scripts/generate-images.test.mjs",
+    "test:guards": "node --test scripts/validate-portfolio-data.test.mjs scripts/generate-images.test.mjs",
     "validate:content": "node scripts/validate-portfolio-data.mjs",
     "images:generate": "node scripts/generate-images.mjs",
     "images:check": "node scripts/generate-images.mjs --check",

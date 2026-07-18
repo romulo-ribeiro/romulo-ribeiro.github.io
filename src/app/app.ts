@@ -69,7 +69,7 @@ export class App implements OnInit, OnDestroy {
             if (entry.isIntersecting) entry.target.classList.add('is-visible');
           });
         },
-        { threshold: 0.1 },
+        { threshold: 0 },
       );
       document
         .querySelectorAll('.section, .section--contact')

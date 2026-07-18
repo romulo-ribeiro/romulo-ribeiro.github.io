@@ -14,13 +14,15 @@ const publishedExperienceCount = portfolioData.experienceAreas.filter(
 ).length;
 
 // Mock IntersectionObserver for test environment
+let latestIntersectionObserverOptions: IntersectionObserverInit | undefined;
+
 class MockIntersectionObserver {
   readonly root: Element | Document | null = null;
   readonly rootMargin: string = '';
   readonly thresholds: readonly number[] = [];
   constructor(callback: IntersectionObserverCallback, options?: IntersectionObserverInit) {
     void callback;
-    void options;
+    latestIntersectionObserverOptions = options;
   }
   observe(target: Element): void {
     void target;
@@ -43,6 +45,7 @@ Object.defineProperty(globalThis, 'IntersectionObserver', {
 
 describe('App', () => {
   beforeEach(async () => {
+    latestIntersectionObserverOptions = undefined;
     localStorage.clear();
     await TestBed.configureTestingModule({
       imports: [App],
@@ -70,6 +73,14 @@ describe('App', () => {
     expect(fixture.nativeElement.querySelectorAll('.work-card')).toHaveLength(
       publishedProjectCount,
     );
+  });
+
+  it('reveals tall mobile sections as soon as they intersect the viewport', async () => {
+    const fixture = TestBed.createComponent(App);
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    expect(latestIntersectionObserverOptions?.threshold).toBe(0);
   });
 
   it('should have contact links', () => {

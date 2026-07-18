@@ -1,73 +1,100 @@
-import { Component } from '@angular/core';
+import {
+  afterNextRender,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  OnDestroy,
+  OnInit,
+  signal,
+} from '@angular/core';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import portfolioDataSource from './data/projects.json';
+import { isLanguage, LanguagePreference } from './language-preference';
+import { LocalizedMetadata } from './localized-metadata';
+import { contactLinks, languages, marqueeRows, projectFilters } from './content';
+import { translations } from './i18n';
+import { Language, PortfolioData, ProjectFilter, ProjectView } from './portfolio-data';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-portfolio-page',
+  imports: [RouterLink],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
-  protected readonly navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' }
-  ];
+export class App implements OnInit, OnDestroy {
+  private readonly portfolioData = portfolioDataSource as unknown as PortfolioData;
+  private readonly route = inject(ActivatedRoute);
+  private readonly preference = inject(LanguagePreference);
+  private readonly metadata = inject(LocalizedMetadata);
+  private revealObserver?: IntersectionObserver;
+  private readonly routeLanguage = this.route.snapshot.data['language'];
 
-  protected readonly stats = [
-    { value: 'Chemical Engineering', label: 'process, systems, and technical foundations' },
-    { value: 'Software Engineering', label: 'frontend, backend, and product delivery' },
-    { value: 'Angular 21', label: 'clean standalone SPA ready for deployment' }
-  ];
+  protected readonly language = signal<Language>(
+    isLanguage(this.routeLanguage) ? this.routeLanguage : 'en',
+  );
+  protected readonly copy = computed(() => translations[this.language()]);
+  protected readonly languages = languages;
+  protected readonly selectedProjectFilter = signal<ProjectFilter>('all');
+  protected readonly projectView = signal<ProjectView>('projects');
+  protected readonly projectFilters = projectFilters;
+  protected readonly caseStudySlots = this.portfolioData.caseStudySlots;
+  protected readonly filteredWorkCards = computed(() => {
+    const filter = this.selectedProjectFilter();
+    const view = this.projectView();
 
-  protected readonly workCards = [
-    {
-      title: 'Industrial and Process Tools',
-      summary: 'Interfaces and internal tools that help translate technical workflows into software people can actually use.',
-      outcome: 'Useful for calculators, operational dashboards, simulations, and workflow automation tied to engineering contexts.',
-      tags: ['Domain modeling', 'Data-heavy UI', 'Applied engineering']
-    },
-    {
-      title: 'Business Platforms',
-      summary: 'Web applications focused on reporting, operations, and decision support with an emphasis on clarity and maintainability.',
-      outcome: 'A good representation of software work where structure, reliability, and readable interfaces matter more than trends.',
-      tags: ['Angular', 'API integration', 'Maintainable architecture']
-    },
-    {
-      title: 'Cross-disciplinary Delivery',
-      summary: 'Projects that benefit from both engineering analysis and software execution, from problem framing to production rollout.',
-      outcome: 'This is where chemical engineering and software engineering reinforce each other instead of living in separate tracks.',
-      tags: ['Systems thinking', 'Technical communication', 'End-to-end ownership']
-    }
-  ];
+    const source =
+      view === 'projects' ? this.portfolioData.projects : this.portfolioData.experienceAreas;
 
-  protected readonly stack = [
-    'Angular 21',
-    'TypeScript',
-    'SCSS',
-    'C# / .NET',
-    'APIs',
-    'Data visualization',
-    'Responsive layouts',
-    'Accessibility',
-    'GitHub Actions'
-  ];
+    return source
+      .filter((project) => project.status === 'published')
+      .filter((project) => filter === 'all' || project.domains.includes(filter))
+      .map((project) => ({
+        project,
+        content: project.translations[this.language()],
+        imageSrcset: project.image ? this.projectImageSrcset(project.image) : undefined,
+      }));
+  });
 
-  protected readonly principles = [
-    {
-      title: 'Engineering first',
-      description: 'I focus on understanding the process, constraints, and operating context before designing the implementation.'
-    },
-    {
-      title: 'Clear software',
-      description: 'I prefer interfaces and codebases that are direct, readable, and easy to evolve without unnecessary complexity.'
-    },
-    {
-      title: 'Practical delivery',
-      description: 'The goal is not novelty. The goal is solving real problems with software that teams can trust and keep shipping.'
-    }
-  ];
+  protected readonly marqueeRows = marqueeRows;
+  protected readonly contactLinks = contactLinks;
 
-  protected readonly contactLinks = [
-    { label: 'GitHub', href: 'https://github.com/romulo-ribeiro' }
-  ];
+  constructor() {
+    afterNextRender(() => {
+      this.preference.save(this.language());
+      this.revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('is-visible');
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll('.section, .section--contact')
+        .forEach((element) => this.revealObserver?.observe(element));
+    });
+  }
+
+  private projectImageSrcset(image: string): string {
+    const base = image.endsWith('.webp') ? image.slice(0, -5) : image;
+    return `${base}-600.webp 600w, ${base}-900.webp 900w, ${image} 1200w`;
+  }
+
+  protected setProjectFilter(filter: ProjectFilter): void {
+    this.selectedProjectFilter.set(filter);
+  }
+
+  protected setProjectView(view: ProjectView): void {
+    this.projectView.set(view);
+  }
+
+  ngOnInit(): void {
+    this.metadata.apply(this.language());
+  }
+
+  ngOnDestroy(): void {
+    this.revealObserver?.disconnect();
+  }
 }

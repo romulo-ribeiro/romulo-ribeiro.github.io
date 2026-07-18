@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml"
+>
+  <url>
+    <loc>https://romulo.is-a.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://romulo.is-a.dev/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://romulo.is-a.dev/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://romulo.is-a.dev/es" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://romulo.is-a.dev/pt" />
+  </url>
+  <url><loc>https://romulo.is-a.dev/en</loc></url>
+  <url><loc>https://romulo.is-a.dev/es</loc></url>
+  <url><loc>https://romulo.is-a.dev/pt</loc></url>
+</urlset>

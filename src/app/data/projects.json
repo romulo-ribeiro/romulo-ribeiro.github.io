@@ -1,0 +1,818 @@
+{
+  "experienceAreas": [
+    {
+      "id": "enterprise-industrial-platforms",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "industrial",
+      "domains": [
+        "industrial",
+        "enterprise",
+        "logistics"
+      ],
+      "image": "/images/project-enterprise-industrial.webp",
+      "technologies": [
+        ".NET",
+        "Angular",
+        "C#",
+        "ASP.NET",
+        "MES",
+        "WMS"
+      ],
+      "translations": {
+        "en": {
+          "title": "Enterprise and industrial platforms",
+          "summary": "Business platforms for manufacturing, warehouse operations, and internal teams, covering workflows, data entry, approvals, and operational screens.",
+          "contribution": "Role-aware workflows and traceable operational records.",
+          "caption": "Manufacturing and warehouse workflows",
+          "outcome": null
+        },
+        "es": {
+          "title": "Plataformas empresariales e industriales",
+          "summary": "Plataformas para manufactura, operaciones de almacén y equipos internos, con flujos, captura de datos, aprobaciones y pantallas operativas.",
+          "contribution": "Flujos por rol y registros operativos trazables.",
+          "caption": "Flujos de manufactura y almacén",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Plataformas empresariais e industriais",
+          "summary": "Plataformas para manufatura, operações de armazém e equipes internas, com fluxos, entrada de dados, aprovações e telas operacionais.",
+          "contribution": "Fluxos por função e registros operacionais rastreáveis.",
+          "caption": "Fluxos de manufatura e armazém",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "api-system-integration",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "enterprise",
+      "domains": [
+        "enterprise",
+        "logistics"
+      ],
+      "image": "/images/project-api-integrations.webp",
+      "technologies": [
+        "REST APIs",
+        "BFF",
+        "ERP",
+        "SAP",
+        "Banking APIs"
+      ],
+      "translations": {
+        "en": {
+          "title": "APIs and system integration",
+          "summary": "Services that move business data between ERP, SAP, banking, tax, pricing, mapping, and legacy platforms while keeping integration boundaries isolated and traceable.",
+          "contribution": "Reliable integrations with auditable data movement.",
+          "caption": "Enterprise data exchange and API boundaries",
+          "outcome": null
+        },
+        "es": {
+          "title": "APIs e integración de sistemas",
+          "summary": "Servicios que mueven datos entre ERP, SAP, bancos, impuestos, precios, mapas y plataformas heredadas, manteniendo límites aislados y trazables.",
+          "contribution": "Integraciones fiables con movimiento de datos auditable.",
+          "caption": "Intercambio empresarial y límites de API",
+          "outcome": null
+        },
+        "pt": {
+          "title": "APIs e integração de sistemas",
+          "summary": "Serviços que movimentam dados entre ERP, SAP, bancos, impostos, preços, mapas e plataformas legadas, mantendo limites isolados e rastreáveis.",
+          "contribution": "Integrações confiáveis com movimentação de dados auditável.",
+          "caption": "Troca empresarial e limites de API",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "realtime-iot-systems",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "industrial",
+      "domains": [
+        "industrial",
+        "logistics"
+      ],
+      "image": "/images/project-realtime-iot.webp",
+      "technologies": [
+        "MQTT",
+        "SignalR",
+        "GPS",
+        "TimescaleDB",
+        "Google Maps"
+      ],
+      "translations": {
+        "en": {
+          "title": "Real-time and IoT systems",
+          "summary": "Telemetry and GPS solutions for equipment monitoring, fleet tracking, alerts, and historical analysis using maps and time-series data.",
+          "contribution": "Live visibility paired with historical context.",
+          "caption": "Telemetry, maps, and operational history",
+          "outcome": null
+        },
+        "es": {
+          "title": "Sistemas IoT y en tiempo real",
+          "summary": "Soluciones de telemetría y GPS para monitorizar equipos, flotas, alertas y análisis histórico mediante mapas y datos de series temporales.",
+          "contribution": "Visibilidad en vivo con contexto histórico.",
+          "caption": "Telemetría, mapas e historial operativo",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Sistemas IoT e em tempo real",
+          "summary": "Soluções de telemetria e GPS para monitorar equipamentos, frotas, alertas e análise histórica por meio de mapas e séries temporais.",
+          "contribution": "Visibilidade ao vivo com contexto histórico.",
+          "caption": "Telemetria, mapas e histórico operacional",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "ai-powered-products",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "ai",
+      "domains": [
+        "ai",
+        "enterprise"
+      ],
+      "image": "/images/project-ai-products.webp",
+      "technologies": [
+        "AI",
+        "Computer vision",
+        "NLP",
+        "Python",
+        ".NET"
+      ],
+      "translations": {
+        "en": {
+          "title": "AI-powered products",
+          "summary": "Product features for computer vision, object detection, natural-language search, AI-assisted learning, and workflows connected to operational data.",
+          "contribution": "AI features connected to real operational workflows.",
+          "caption": "AI interfaces for detection and search",
+          "outcome": null
+        },
+        "es": {
+          "title": "Productos con IA",
+          "summary": "Funciones de producto para visión por computador, detección de objetos, búsqueda en lenguaje natural, aprendizaje asistido y flujos conectados a datos operativos.",
+          "contribution": "Funciones de IA conectadas a flujos operativos reales.",
+          "caption": "Interfaces de IA para detección y búsqueda",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Produtos com IA",
+          "summary": "Funcionalidades de produto para visão computacional, detecção de objetos, busca em linguagem natural, aprendizado assistido e fluxos conectados a dados operacionais.",
+          "contribution": "Funcionalidades de IA conectadas a fluxos reais.",
+          "caption": "Interfaces de IA para detecção e busca",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "web-mobile-products",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "product",
+      "domains": [
+        "product",
+        "logistics"
+      ],
+      "image": "/images/project-web-mobile.webp",
+      "technologies": [
+        "React",
+        "Next.js",
+        "Angular",
+        "React Native",
+        "NestJS",
+        "Expo"
+      ],
+      "translations": {
+        "en": {
+          "title": "Web and mobile products",
+          "summary": "Responsive web, progressive web, and mobile products for logistics, education, finance, travel, and community use cases.",
+          "contribution": "Responsive web, PWA, and mobile experiences.",
+          "caption": "Web, PWA, and mobile product delivery",
+          "outcome": null
+        },
+        "es": {
+          "title": "Productos web y móviles",
+          "summary": "Productos web responsivos, PWA y móviles para logística, educación, finanzas, viajes y comunidades.",
+          "contribution": "Experiencias web, PWA y móviles responsivas.",
+          "caption": "Entrega de productos web, PWA y móviles",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Produtos web e mobile",
+          "summary": "Produtos web responsivos, PWA e mobile para logística, educação, finanças, viagens e comunidades.",
+          "contribution": "Experiências web, PWA e mobile responsivas.",
+          "caption": "Entrega de produtos web, PWA e mobile",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "cloud-devops",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "enterprise",
+      "domains": [
+        "enterprise"
+      ],
+      "image": "/images/project-cloud-devops.webp",
+      "technologies": [
+        "Azure",
+        "AWS",
+        "Docker",
+        "Nginx",
+        "CI/CD"
+      ],
+      "translations": {
+        "en": {
+          "title": "Cloud and DevOps",
+          "summary": "Production delivery across Azure and AWS, including application hosting, containerized services, environment promotion, and repeatable CI/CD pipelines.",
+          "contribution": "Repeatable environments and production releases.",
+          "caption": "Cloud environments and release pipelines",
+          "outcome": null
+        },
+        "es": {
+          "title": "Nube y DevOps",
+          "summary": "Entrega en producción en Azure y AWS, incluyendo alojamiento, servicios en contenedores, promoción entre entornos y canalizaciones CI/CD repetibles.",
+          "contribution": "Entornos repetibles y despliegues en producción.",
+          "caption": "Entornos cloud y canalizaciones de entrega",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Nuvem e DevOps",
+          "summary": "Entrega em produção na Azure e AWS, incluindo hospedagem, serviços em contêineres, promoção entre ambientes e pipelines CI/CD repetíveis.",
+          "contribution": "Ambientes repetíveis e releases em produção.",
+          "caption": "Ambientes cloud e pipelines de entrega",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "data-persistence",
+      "status": "published",
+      "featured": false,
+      "primaryDomain": "enterprise",
+      "domains": [
+        "enterprise",
+        "industrial"
+      ],
+      "image": "/images/project-data-platforms.webp",
+      "technologies": [
+        "SQL Server",
+        "Oracle",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis"
+      ],
+      "translations": {
+        "en": {
+          "title": "Data and persistence",
+          "summary": "Data solutions for transactional workflows, reporting, integrations, caching, and telemetry history across relational, document, and time-series stores.",
+          "contribution": "Query performance, reporting, and durable storage.",
+          "caption": "Transactional, reporting, and time-series data",
+          "outcome": null
+        },
+        "es": {
+          "title": "Datos y persistencia",
+          "summary": "Soluciones para flujos transaccionales, informes, integraciones, caché e historial de telemetría en bases relacionales, documentales y temporales.",
+          "contribution": "Rendimiento de consultas, informes y almacenamiento durable.",
+          "caption": "Datos transaccionales, informes y series temporales",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Dados e persistência",
+          "summary": "Soluções para fluxos transacionais, relatórios, integrações, cache e histórico de telemetria em bases relacionais, documentais e temporais.",
+          "contribution": "Desempenho de consultas, relatórios e armazenamento durável.",
+          "caption": "Dados transacionais, relatórios e séries temporais",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "architecture-security",
+      "status": "published",
+      "featured": false,
+      "primaryDomain": "enterprise",
+      "domains": [
+        "enterprise"
+      ],
+      "image": "/images/project-architecture-security.webp",
+      "technologies": [
+        "CQRS",
+        "Microservices",
+        "DDD",
+        "OAuth2",
+        "JWT"
+      ],
+      "translations": {
+        "en": {
+          "title": "Architecture and security",
+          "summary": "Application design covering service boundaries, frontend composition, domain modeling, authentication, authorization, and multi-tenant behavior.",
+          "contribution": "Modular services with secure, maintainable structure.",
+          "caption": "Modular services and secure access boundaries",
+          "outcome": null
+        },
+        "es": {
+          "title": "Arquitectura y seguridad",
+          "summary": "Diseño que cubre límites de servicios, composición frontend, modelado de dominio, autenticación, autorización y comportamiento multiempresa.",
+          "contribution": "Servicios modulares con estructura segura y mantenible.",
+          "caption": "Servicios modulares y límites de acceso seguros",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Arquitetura e segurança",
+          "summary": "Projeto cobrindo limites de serviços, composição frontend, modelagem de domínio, autenticação, autorização e comportamento multitenant.",
+          "contribution": "Serviços modulares com estrutura segura e sustentável.",
+          "caption": "Serviços modulares e limites de acesso seguros",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "quality-observability",
+      "status": "published",
+      "featured": false,
+      "primaryDomain": "enterprise",
+      "domains": [
+        "enterprise"
+      ],
+      "image": "/images/project-quality-observability.webp",
+      "technologies": [
+        "Testing",
+        "SonarQube",
+        "Snyk",
+        "Serilog",
+        "Datadog"
+      ],
+      "translations": {
+        "en": {
+          "title": "Quality and observability",
+          "summary": "Unit and integration testing, quality gates, dependency security, structured logging, and production monitoring for safer delivery and operation.",
+          "contribution": "Automated checks, diagnostics, and production visibility.",
+          "caption": "Testing, diagnostics, and production monitoring",
+          "outcome": null
+        },
+        "es": {
+          "title": "Calidad y observabilidad",
+          "summary": "Pruebas unitarias e integración, controles de calidad, seguridad de dependencias, registros estructurados y monitorización para una operación más segura.",
+          "contribution": "Controles automatizados, diagnósticos y visibilidad en producción.",
+          "caption": "Pruebas, diagnósticos y monitorización",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Qualidade e observabilidade",
+          "summary": "Testes unitários e de integração, controles de qualidade, segurança de dependências, logs estruturados e monitoramento para uma operação mais segura.",
+          "contribution": "Verificações automatizadas, diagnósticos e visibilidade em produção.",
+          "caption": "Testes, diagnósticos e monitoramento",
+          "outcome": null
+        }
+      }
+    }
+  ],
+  "projects": [
+    {
+      "id": "ai-video-platform",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "ai",
+      "domains": [
+        "ai",
+        "enterprise"
+      ],
+      "image": "/images/project-ai-video.webp",
+      "technologies": [
+        ".NET",
+        "Angular",
+        "WebRTC",
+        "Docker",
+        "GitHub Actions"
+      ],
+      "translations": {
+        "en": {
+          "title": "AI Video Intelligence Platform",
+          "summary": "A multi-tenant platform for real-time video analysis, object detection, and natural-language video search.",
+          "contribution": "Rebuilt video communication, standardized APIs, and connected AI analysis to production workflows.",
+          "caption": "Real-time video analysis and security operations",
+          "outcome": null
+        },
+        "es": {
+          "title": "Plataforma de inteligencia de video con IA",
+          "summary": "Una plataforma multiempresa para análisis de video en tiempo real, detección de objetos y búsqueda en lenguaje natural.",
+          "contribution": "Reconstrucción de videocomunicación, estandarización de APIs e integración del análisis de IA en flujos productivos.",
+          "caption": "Análisis de video y operaciones de seguridad",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Plataforma de inteligência de vídeo com IA",
+          "summary": "Uma plataforma multitenant para análise de vídeo em tempo real, detecção de objetos e busca em linguagem natural.",
+          "contribution": "Reconstrução da comunicação por vídeo, padronização de APIs e integração da análise de IA a fluxos produtivos.",
+          "caption": "Análise de vídeo e operações de segurança",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "group-travel-management",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "product",
+      "domains": [
+        "product"
+      ],
+      "image": "/images/project-group-travel.webp",
+      "technologies": [
+        "Angular",
+        ".NET",
+        "REST APIs",
+        "SQL Server"
+      ],
+      "translations": {
+        "en": {
+          "title": "Group Travel Management System",
+          "summary": "A system for coordinating group travel, accommodation, payments, and participant records in one operational workflow.",
+          "contribution": "Structured booking, payment, and participant-management processes for organized group travel.",
+          "caption": "Trip planning, participants, accommodation, and payments",
+          "outcome": null
+        },
+        "es": {
+          "title": "Sistema de gestión de viajes en grupo",
+          "summary": "Un sistema para coordinar viajes, alojamiento, pagos y registros de participantes en un único flujo operativo.",
+          "contribution": "Estructuración de reservas, pagos y gestión de participantes para viajes organizados.",
+          "caption": "Planificación, participantes, alojamiento y pagos",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Sistema de gestão de viagens em grupo",
+          "summary": "Um sistema para coordenar viagens, hospedagem, pagamentos e registros de participantes em um único fluxo operacional.",
+          "contribution": "Estruturação de reservas, pagamentos e gestão de participantes para viagens organizadas.",
+          "caption": "Planejamento, participantes, hospedagem e pagamentos",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "language-learning-platform",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "product",
+      "domains": [
+        "product",
+        "ai"
+      ],
+      "image": "/images/project-language-learning.webp",
+      "technologies": [
+        "Angular",
+        "NestJS",
+        "PWA",
+        "WebRTC",
+        "AI"
+      ],
+      "translations": {
+        "en": {
+          "title": "Language Learning Platform",
+          "summary": "A progressive web application for guided language practice, progress tracking, live sessions, and AI-assisted exercises.",
+          "contribution": "Combined learning workflows, gamification, video communication, and AI-assisted practice in one product.",
+          "caption": "AI-assisted language learning across web and mobile",
+          "outcome": null
+        },
+        "es": {
+          "title": "Plataforma de aprendizaje de idiomas",
+          "summary": "Una aplicación web progresiva para práctica guiada, seguimiento del progreso, sesiones en vivo y ejercicios asistidos por IA.",
+          "contribution": "Integración de aprendizaje, gamificación, videocomunicación y práctica asistida por IA en un solo producto.",
+          "caption": "Aprendizaje de idiomas con IA en web y móvil",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Plataforma de aprendizado de idiomas",
+          "summary": "Uma aplicação web progressiva para prática guiada, acompanhamento de progresso, sessões ao vivo e exercícios assistidos por IA.",
+          "contribution": "Integração de aprendizagem, gamificação, comunicação por vídeo e prática assistida por IA em um único produto.",
+          "caption": "Aprendizado de idiomas com IA na web e mobile",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "hr-expenses-modernization",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "enterprise",
+      "domains": [
+        "enterprise"
+      ],
+      "image": "/images/project-hr-expenses.webp",
+      "technologies": [
+        ".NET WebForms",
+        "SQL Server",
+        "REST APIs",
+        "PDF generation"
+      ],
+      "translations": {
+        "en": {
+          "title": "HR and Expense Platform Modernization",
+          "summary": "A legacy business platform enhanced with tax integrations, payment documents, account controls, and operational reporting.",
+          "contribution": "Extended a production WebForms platform with fiscal workflows, external APIs, controls, and reporting.",
+          "caption": "Fiscal integration and corporate expense operations",
+          "outcome": null
+        },
+        "es": {
+          "title": "Modernización de plataforma de RR. HH. y gastos",
+          "summary": "Una plataforma empresarial heredada ampliada con integraciones fiscales, documentos de pago, controles de cuenta e informes operativos.",
+          "contribution": "Ampliación de una plataforma WebForms con flujos fiscales, APIs externas, controles e informes.",
+          "caption": "Integración fiscal y gestión de gastos corporativos",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Modernização de plataforma de RH e despesas",
+          "summary": "Uma plataforma empresarial legada ampliada com integrações fiscais, documentos de pagamento, controles de conta e relatórios operacionais.",
+          "contribution": "Evolução de uma plataforma WebForms com fluxos fiscais, APIs externas, controles e relatórios.",
+          "caption": "Integração fiscal e gestão de despesas corporativas",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "fleet-operations-platform",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "logistics",
+      "domains": [
+        "logistics",
+        "enterprise"
+      ],
+      "image": "/images/project-fleet-operations.webp",
+      "technologies": [
+        "Next.js",
+        ".NET",
+        "GPS telemetry",
+        "Google Maps",
+        "REST APIs"
+      ],
+      "translations": {
+        "en": {
+          "title": "Fleet Operations Platform",
+          "summary": "A fleet-management product combining GPS telemetry, route visibility, toll data, and transport-compliance workflows.",
+          "contribution": "Connected live vehicle data, maps, external services, and regulatory checks in one operational view.",
+          "caption": "Fleet telemetry, routes, compliance, and active alerts",
+          "outcome": null
+        },
+        "es": {
+          "title": "Plataforma de operaciones de flota",
+          "summary": "Un producto de gestión de flotas que combina telemetría GPS, visibilidad de rutas, peajes y flujos de cumplimiento del transporte.",
+          "contribution": "Conexión de datos de vehículos, mapas, servicios externos y controles regulatorios en una vista operativa.",
+          "caption": "Telemetría, rutas, cumplimiento y alertas",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Plataforma de operações de frota",
+          "summary": "Um produto de gestão de frotas que combina telemetria GPS, visibilidade de rotas, pedágios e fluxos de conformidade de transporte.",
+          "contribution": "Conexão de dados de veículos, mapas, serviços externos e verificações regulatórias em uma visão operacional.",
+          "caption": "Telemetria, rotas, conformidade e alertas",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "cycling-community-app",
+      "status": "published",
+      "featured": true,
+      "primaryDomain": "product",
+      "domains": [
+        "product",
+        "logistics"
+      ],
+      "image": "/images/project-cycling-community.webp",
+      "technologies": [
+        "React Native",
+        "AWS",
+        "REST APIs",
+        "Mobile deployment"
+      ],
+      "translations": {
+        "en": {
+          "title": "Cycling Community App",
+          "summary": "A mobile social platform for rides, group challenges, rewards, activity tracking, and partner-store engagement.",
+          "contribution": "Led a cross-platform community product through AWS deployment and production release.",
+          "caption": "Cycling activity, group challenges, and community rewards",
+          "outcome": null
+        },
+        "es": {
+          "title": "Aplicación de comunidad ciclista",
+          "summary": "Una plataforma social móvil para recorridos, desafíos en grupo, recompensas, seguimiento de actividad y comercios asociados.",
+          "contribution": "Liderazgo de un producto multiplataforma hasta su despliegue en AWS y publicación en producción.",
+          "caption": "Actividad ciclista, desafíos y recompensas comunitarias",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Aplicativo de comunidade ciclística",
+          "summary": "Uma plataforma social mobile para pedaladas, desafios em grupo, recompensas, acompanhamento de atividades e lojas parceiras.",
+          "contribution": "Liderança de um produto multiplataforma até o deploy na AWS e a publicação em produção.",
+          "caption": "Atividade ciclística, desafios e recompensas da comunidade",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "manufacturing-brewing-quality-platform",
+      "status": "published",
+      "featured": false,
+      "primaryDomain": "industrial",
+      "domains": [
+        "industrial",
+        "enterprise"
+      ],
+      "image": "/images/project-manufacturing-quality.webp",
+      "technologies": [
+        ".NET WebForms",
+        "SQL Server",
+        "JavaScript",
+        "REST APIs"
+      ],
+      "translations": {
+        "en": {
+          "title": "Manufacturing Quality Operations Platform",
+          "summary": "An operational platform supporting production and quality workflows in a large process-manufacturing environment.",
+          "contribution": "Delivered new operational features, introduced API boundaries around legacy interfaces, and improved query and indexing performance.",
+          "caption": "Production and quality workflows",
+          "outcome": null
+        },
+        "es": {
+          "title": "Plataforma de operaciones de calidad industrial",
+          "summary": "Una plataforma operativa para flujos de producción y calidad en un entorno de manufactura de procesos a gran escala.",
+          "contribution": "Entrega de nuevas funciones, introducción de límites de API sobre interfaces heredadas y mejora del rendimiento de consultas e índices.",
+          "caption": "Flujos de producción y calidad",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Plataforma de operações de qualidade industrial",
+          "summary": "Uma plataforma operacional para fluxos de produção e qualidade em um ambiente de manufatura de processos em grande escala.",
+          "contribution": "Entrega de novas funcionalidades, introdução de limites de API sobre interfaces legadas e melhoria de consultas e índices.",
+          "caption": "Fluxos de produção e qualidade",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "manufacturing-specifications-mes-modernization",
+      "status": "published",
+      "featured": false,
+      "primaryDomain": "industrial",
+      "domains": [
+        "industrial",
+        "enterprise"
+      ],
+      "image": "/images/project-mes-modernization.webp",
+      "technologies": [
+        "Angular",
+        ".NET",
+        "CQRS",
+        "Hangfire",
+        "SQL Server"
+      ],
+      "translations": {
+        "en": {
+          "title": "Manufacturing Specifications and MES Modernization",
+          "summary": "A modern web platform for managing technical process specifications and supporting the transition toward a decoupled manufacturing execution architecture.",
+          "contribution": "Built Angular and .NET features, introduced CQRS, and implemented background processing for long-running manufacturing workflows.",
+          "caption": "Technical specifications and manufacturing execution",
+          "outcome": null
+        },
+        "es": {
+          "title": "Especificaciones industriales y modernización MES",
+          "summary": "Una plataforma web moderna para gestionar especificaciones técnicas de proceso y apoyar la transición hacia una arquitectura de ejecución desacoplada.",
+          "contribution": "Desarrollo con Angular y .NET, introducción de CQRS e implementación de procesamiento en segundo plano para flujos prolongados.",
+          "caption": "Especificaciones técnicas y ejecución industrial",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Especificações industriais e modernização MES",
+          "summary": "Uma plataforma web moderna para gerenciar especificações técnicas de processo e apoiar a transição para uma arquitetura de execução desacoplada.",
+          "contribution": "Desenvolvimento com Angular e .NET, introdução de CQRS e implementação de processamento em segundo plano para fluxos longos.",
+          "caption": "Especificações técnicas e execução industrial",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "warehouse-mobile-operations",
+      "status": "published",
+      "featured": false,
+      "primaryDomain": "logistics",
+      "domains": [
+        "logistics",
+        "industrial",
+        "enterprise"
+      ],
+      "image": "/images/project-warehouse-mobile.webp",
+      "technologies": [
+        ".NET",
+        "React Native",
+        "REST APIs",
+        "Barcode scanning",
+        "Real-time inventory"
+      ],
+      "translations": {
+        "en": {
+          "title": "Warehouse and Mobile Operations Platform",
+          "summary": "A warehouse-management system combining real-time inventory visibility with cross-platform mobile workflows for operational teams.",
+          "contribution": "Developed inventory workflows and React Native features with barcode scanning for warehouse execution.",
+          "caption": "Warehouse inventory and mobile execution",
+          "outcome": null
+        },
+        "es": {
+          "title": "Plataforma de operaciones de almacén y movilidad",
+          "summary": "Un sistema de gestión de almacenes que combina inventario en tiempo real con flujos móviles multiplataforma para equipos operativos.",
+          "contribution": "Desarrollo de flujos de inventario y funciones en React Native con lectura de códigos de barras.",
+          "caption": "Inventario y ejecución móvil en almacén",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Plataforma de operações de armazém e mobilidade",
+          "summary": "Um sistema de gestão de armazéns que combina inventário em tempo real com fluxos mobile multiplataforma para equipes operacionais.",
+          "contribution": "Desenvolvimento de fluxos de inventário e funcionalidades em React Native com leitura de códigos de barras.",
+          "caption": "Inventário e execução mobile em armazém",
+          "outcome": null
+        }
+      }
+    },
+    {
+      "id": "industrial-parts-services-quotation",
+      "status": "published",
+      "featured": false,
+      "primaryDomain": "enterprise",
+      "domains": [
+        "enterprise",
+        "logistics"
+      ],
+      "image": "/images/project-industrial-quotation.webp",
+      "technologies": [
+        ".NET",
+        "Angular",
+        "SAP",
+        "BFF",
+        "REST APIs"
+      ],
+      "translations": {
+        "en": {
+          "title": "Industrial Parts and Services Quotation Platform",
+          "summary": "A componentized application for preparing parts and services quotations across pricing, enterprise, and legacy systems.",
+          "contribution": "Built the product from the ground up, designed granular service access, and integrated SAP, pricing engines, and legacy platforms through APIs and BFF layers.",
+          "caption": "Quotation, pricing, and enterprise integration",
+          "outcome": null
+        },
+        "es": {
+          "title": "Plataforma de cotización de piezas y servicios industriales",
+          "summary": "Una aplicación modular para preparar cotizaciones de piezas y servicios entre sistemas de precios, empresariales y heredados.",
+          "contribution": "Construcción del producto desde cero, diseño de acceso granular e integración con SAP, motores de precios y plataformas heredadas mediante APIs y BFF.",
+          "caption": "Cotización, precios e integración empresarial",
+          "outcome": null
+        },
+        "pt": {
+          "title": "Plataforma de cotação de peças e serviços industriais",
+          "summary": "Uma aplicação componentizada para preparar cotações de peças e serviços entre sistemas de preços, empresariais e legados.",
+          "contribution": "Construção do produto desde o início, desenho de acesso granular e integração com SAP, motores de preços e plataformas legadas por APIs e BFF.",
+          "caption": "Cotação, preços e integração empresarial",
+          "outcome": null
+        }
+      }
+    }
+  ],
+  "caseStudySlots": {
+    "role": null,
+    "validation": null
+  },
+  "evidenceSlots": [
+    {
+      "id": "outcomes",
+      "status": "draft",
+      "content": null
+    },
+    {
+      "id": "collaboration",
+      "status": "draft",
+      "content": null
+    },
+    {
+      "id": "frontend-quality",
+      "status": "draft",
+      "content": null
+    }
+  ],
+  "technicalNotes": [
+    {
+      "id": "legacy-mes-modernization",
+      "status": "draft",
+      "content": null
+    },
+    {
+      "id": "cqrs-operational-systems",
+      "status": "draft",
+      "content": null
+    },
+    {
+      "id": "realtime-telemetry-dashboards",
+      "status": "draft",
+      "content": null
+    }
+  ]
+}

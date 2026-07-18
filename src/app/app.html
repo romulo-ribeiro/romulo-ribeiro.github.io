@@ -1,92 +1,85 @@
 <div class="page-shell">
+  <a class="skip-link" href="#top">{{ copy().skipToContent }}</a>
   <header class="site-header">
-    <a class="brand" href="#top">Romulo</a>
-
-    <nav class="site-nav" aria-label="Primary">
-      @for (item of navItems; track item.label) {
+    <nav class="site-nav" [attr.aria-label]="copy().navLabel">
+      @for (item of copy().nav; track item.href) {
         <a [href]="item.href">{{ item.label }}</a>
       }
     </nav>
+    <div class="language-switcher" [attr.aria-label]="copy().languageLabel">
+      @for (language of languages; track language.code) {
+        <a
+          [routerLink]="['/', language.code]"
+          [class.is-active]="language.code === this.language()"
+          [attr.aria-current]="language.code === this.language() ? 'page' : null"
+          [attr.aria-label]="copy().languageNames[language.code]"
+          >{{ language.label }}</a
+        >
+      }
+    </div>
   </header>
 
   <main id="top">
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Chemical and software engineer</p>
-        <h1>Engineering systems, software, and the space between them.</h1>
-        <p class="hero-text">
-          I work across process thinking, technical analysis, and software
-          delivery. This portfolio is a clean single-page overview of that mix:
-          practical engineering background, solid web implementation, and a
-          preference for clear systems over noise.
-        </p>
-
+        <p class="eyebrow">{{ copy().hero.eyebrow }}</p>
+        <h1>
+          {{ copy().hero.titleBefore }}
+          <span class="accent-text">{{ copy().hero.titleAccent }}</span>
+        </h1>
+        <p class="hero-text">{{ copy().hero.text }}</p>
         <div class="hero-actions">
-          <a class="button button--primary" href="#projects">View projects</a>
-          <a class="button button--ghost" href="#contact">Get in touch</a>
+          <a class="button button--primary" href="#projects">{{ copy().hero.primaryAction }}</a>
+          <a class="button button--ghost" href="#about">{{ copy().hero.secondaryAction }}</a>
         </div>
       </div>
 
-      <aside class="hero-panel" aria-label="Project summary">
-        <p class="panel-label">Profile summary</p>
-
+      <aside class="hero-panel" [attr.aria-label]="copy().hero.profile">
+        <div class="panel-diagonal"></div>
+        <div class="profile-photo-slot">
+          <img
+            src="/images/profile-hero.webp"
+            srcset="
+              /images/profile-hero-600.webp  600w,
+              /images/profile-hero-900.webp  900w,
+              /images/profile-hero.webp     1200w
+            "
+            sizes="(max-width: 960px) calc(100vw - 4rem), 500px"
+            [alt]="copy().hero.profilePhoto"
+            width="1200"
+            height="900"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </div>
+        <p class="panel-label">{{ copy().hero.profile }}</p>
         <div class="stat-grid">
-          @for (item of stats; track item.value) {
+          @for (item of copy().hero.stats; track item.value) {
             <article class="stat-card">
-              <strong>{{ item.value }}</strong>
-              <span>{{ item.label }}</span>
+              <strong>{{ item.value }}</strong
+              ><span>{{ item.label }}</span>
             </article>
           }
         </div>
-
-        <p class="panel-note">
-          Bridging engineering analysis and software delivery with a focus on
-          clarity, structure, and practical implementation.
-        </p>
+        <p class="panel-note">{{ copy().hero.profileSummary }}</p>
       </aside>
     </section>
 
-    <section class="section" id="about">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2>A portfolio for someone who builds with both domain knowledge and code.</h2>
+    <section class="section section--services" id="capabilities">
+      <div class="section-badge">
+        <span class="badge-line"></span
+        ><span class="eyebrow">{{ copy().capabilities.eyebrow }}</span>
       </div>
-
-      <div class="about-grid">
-        <article class="surface-card">
-          <p>
-            My background in chemical engineering shapes how I approach software:
-            understand the process, map the variables, reduce ambiguity, and
-            build systems that are stable in real use. That mindset carries into
-            product work, internal tools, and technical applications.
-          </p>
-        </article>
-
-        <article class="surface-card surface-card--accent">
-          <p class="quote">
-            "Strong software starts with structured thinking, not decorative complexity."
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-heading">
-        <p class="eyebrow">Projects</p>
-        <h2>Examples of the kinds of systems and products I like to build.</h2>
-      </div>
-
-      <div class="work-grid">
-        @for (card of workCards; track card.title) {
-          <article class="work-card">
-            <p class="card-index">0{{ $index + 1 }}</p>
-            <h3>{{ card.title }}</h3>
-            <p>{{ card.summary }}</p>
-            <p class="outcome">{{ card.outcome }}</p>
-
+      <h2>{{ copy().capabilities.title }}</h2>
+      <div class="services-grid">
+        @for (service of copy().capabilities.items; track service.title; let i = $index) {
+          <article class="service-item">
+            <p class="card-index">0{{ i + 1 }}</p>
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.description }}</p>
             <div class="tag-row">
-              @for (tag of card.tags; track tag) {
-                <span>{{ tag }}</span>
+              @for (tag of service.tags; track tag) {
+                <span class="tag">{{ tag }}</span>
               }
             </div>
           </article>
@@ -94,47 +87,290 @@
       </div>
     </section>
 
-    <section class="section section--split" id="skills">
-      <div>
-        <div class="section-heading">
-          <p class="eyebrow">Skills</p>
-          <h2>Technical tools backed by engineering discipline.</h2>
+    <section class="section section--about" id="about">
+      <div class="section-badge">
+        <span class="badge-line"></span><span class="eyebrow">{{ copy().about.eyebrow }}</span>
+      </div>
+      <h2>{{ copy().about.title }}</h2>
+      <div class="bio-layout">
+        <div>
+          <p class="bio">{{ copy().about.bio }}</p>
+          <div class="photo-slot photo-slot--landscape photo-slot--image">
+            <img
+              src="/images/work-context.webp"
+              srcset="
+                /images/work-context-600.webp   600w,
+                /images/work-context-1000.webp 1000w,
+                /images/work-context.webp      1600w
+              "
+              sizes="(max-width: 960px) calc(100vw - 1.4rem), 720px"
+              alt="Software engineer reviewing system architecture and operational data"
+              width="1600"
+              height="700"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
         </div>
+        <div class="photo-slot photo-slot--portrait photo-slot--image">
+          <img
+            src="/images/profile-factory.webp"
+            srcset="
+              /images/profile-factory-450.webp 450w,
+              /images/profile-factory-700.webp 700w,
+              /images/profile-factory.webp     900w
+            "
+            sizes="(max-width: 960px) calc(100vw - 1.4rem), 280px"
+            [alt]="copy().about.portraitPhoto"
+            width="900"
+            height="1350"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+      <div class="about-grid">
+        <article class="surface-card">
+          <p>{{ copy().about.method }}</p>
+        </article>
+        <article class="surface-card surface-card--annotation">
+          <div class="annotation-marker"></div>
+          <p class="quote">{{ copy().about.quote }}</p>
+        </article>
+      </div>
+    </section>
 
-        <div class="chip-grid">
-          @for (item of stack; track item) {
-            <span class="chip">{{ item }}</span>
+    <section class="section section--projects" id="projects">
+      <div class="section-badge">
+        <span class="badge-line"></span><span class="eyebrow">{{ copy().projects.eyebrow }}</span>
+      </div>
+      <h2>{{ copy().projects.title }}</h2>
+      <p class="projects-overview">{{ copy().projects.overview }}</p>
+
+      <div class="project-controls">
+        <div class="project-view" [attr.aria-label]="copy().projects.viewLabel">
+          <button
+            type="button"
+            [class.is-active]="projectView() === 'projects'"
+            [attr.aria-pressed]="projectView() === 'projects'"
+            (click)="setProjectView('projects')"
+          >
+            {{ copy().projects.views.projects }}
+          </button>
+          <button
+            type="button"
+            [class.is-active]="projectView() === 'experience'"
+            [attr.aria-pressed]="projectView() === 'experience'"
+            (click)="setProjectView('experience')"
+          >
+            {{ copy().projects.views.experience }}
+          </button>
+        </div>
+        <div class="project-filters" [attr.aria-label]="copy().projects.filterLabel">
+          @for (filter of projectFilters; track filter) {
+            <button
+              type="button"
+              [class.is-active]="selectedProjectFilter() === filter"
+              [attr.aria-pressed]="selectedProjectFilter() === filter"
+              (click)="setProjectFilter(filter)"
+            >
+              {{ copy().projects.filters[filter] }}
+            </button>
           }
         </div>
       </div>
 
-      <div class="principles">
-        @for (item of principles; track item.title) {
-          <article class="principle">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.description }}</p>
+      <p class="project-results" role="status" aria-live="polite">
+        {{ filteredWorkCards().length }}
+        {{
+          projectView() === 'projects'
+            ? copy().projects.projectResults
+            : copy().projects.experienceResults
+        }}
+      </p>
+
+      <div class="work-grid">
+        @for (item of filteredWorkCards(); track item.project.id; let i = $index) {
+          <article class="work-card">
+            @if (item.project.image; as image) {
+              <div class="work-card__media">
+                <img
+                  [src]="image"
+                  [attr.srcset]="item.imageSrcset"
+                  sizes="(max-width: 960px) calc(100vw - 4.4rem), 340px"
+                  [alt]="item.content.title"
+                  class="work-card__img"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
+                />
+              </div>
+            } @else {
+              <div
+                class="work-card__media work-card__media--placeholder"
+                role="img"
+                [attr.aria-label]="copy().projects.missingImage"
+              >
+                <span>{{ copy().projects.missingImage }}</span>
+              </div>
+            }
+            @if (item.content.caption) {
+              <p class="work-card__caption">{{ item.content.caption }}</p>
+            }
+            <div class="card-accent"></div>
+            <div class="work-card__meta">
+              <p class="card-index">0{{ i + 1 }}</p>
+              <div class="work-card__labels">
+                <span>{{
+                  projectView() === 'projects'
+                    ? copy().projects.projectType
+                    : copy().projects.experienceType
+                }}</span
+                ><span>{{ copy().projects.filters[item.project.primaryDomain] }}</span>
+              </div>
+            </div>
+            <h3>{{ item.content.title }}</h3>
+            <p>{{ item.content.summary }}</p>
+            @if (item.content.contribution) {
+              <p class="work-card__proof">{{ item.content.contribution }}</p>
+            }
+            @if (item.content.outcome) {
+              <p class="work-card__outcome">
+                <strong>{{ copy().projects.outcomeLabel }}</strong> {{ item.content.outcome }}
+              </p>
+            }
+            <div class="tag-row">
+              @for (tag of item.project.technologies; track tag) {
+                <span class="tag">{{ tag }}</span>
+              }
+            </div>
           </article>
         }
       </div>
+
+      <p class="confidentiality-note">{{ copy().projects.confidentiality }}</p>
+
+      <article class="case-study" id="case-study">
+        <div class="case-study__intro">
+          <p class="eyebrow">{{ copy().caseStudy.eyebrow }}</p>
+          <h3>{{ copy().caseStudy.title }}</h3>
+          <p class="case-study__lead">{{ copy().caseStudy.lead }}</p>
+        </div>
+        <div class="case-study__media">
+          <img
+            src="/images/case-study-industrial-monitoring.webp"
+            srcset="
+              /images/case-study-industrial-monitoring-700.webp   700w,
+              /images/case-study-industrial-monitoring-1200.webp 1200w,
+              /images/case-study-industrial-monitoring.webp      1600w
+            "
+            sizes="calc(100vw - 1.4rem)"
+            [alt]="copy().caseStudy.imageAlt"
+            class="case-study__img"
+            width="1600"
+            height="611"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+          />
+        </div>
+        <div class="case-study__facts">
+          @for (fact of copy().caseStudy.facts; track fact.label) {
+            <div>
+              <span>{{ fact.label }}</span>
+              <p>{{ fact.text }}</p>
+            </div>
+          }
+        </div>
+        @if (caseStudySlots.role || caseStudySlots.validation) {
+          <div class="case-study__technical case-study__details">
+            @if (caseStudySlots.role) {
+              <div>
+                <span>{{ copy().caseStudy.roleLabel }}</span>
+                <p>{{ caseStudySlots.role }}</p>
+              </div>
+            }
+            @if (caseStudySlots.validation) {
+              <div>
+                <span>{{ copy().caseStudy.validationLabel }}</span>
+                <p>{{ caseStudySlots.validation }}</p>
+              </div>
+            }
+          </div>
+        }
+        <ol class="architecture" [attr.aria-label]="copy().caseStudy.architectureLabel">
+          @for (step of copy().caseStudy.flow; track step.label; let i = $index) {
+            <li class="architecture__node">
+              <span class="architecture__index">0{{ i + 1 }}</span
+              ><strong>{{ step.label }}</strong
+              ><span class="architecture__detail">{{ step.detail }}</span>
+            </li>
+          }
+        </ol>
+        <div class="case-study__technical">
+          @for (item of copy().caseStudy.technical; track item.label) {
+            <div>
+              <span>{{ item.label }}</span>
+              <p>{{ item.text }}</p>
+            </div>
+          }
+        </div>
+      </article>
     </section>
 
-    <section class="section section--contact" id="contact">
-      <div class="section-heading">
-        <p class="eyebrow">Contact</p>
-        <h2>GitHub is the main public channel for projects and technical work.</h2>
+    <section class="section section--skills" id="skills">
+      <div class="section-badge">
+        <span class="badge-line"></span><span class="eyebrow">{{ copy().skills.eyebrow }}</span>
       </div>
+      <h2>{{ copy().skills.title }}</h2>
+      <div class="marquee-section">
+        <div class="marquee-container">
+          @for (row of marqueeRows; track $index; let i = $index) {
+            <div
+              class="marquee-row"
+              [style.--speed]="i === 0 ? '70s' : '90s'"
+              [style.--direction]="i === 0 ? 'normal' : 'reverse'"
+            >
+              <div class="marquee-track">
+                @for (item of row; track item) {
+                  <span class="chip">{{ item }}</span>
+                }
+                @for (item of row; track item) {
+                  <span class="chip" aria-hidden="true">{{ item }}</span>
+                }
+              </div>
+            </div>
+          }
+        </div>
+        <div class="principles-grid">
+          @for (item of copy().skills.principles; track item.title) {
+            <article class="principle">
+              <div class="principle-marker"></div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.description }}</p>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
 
-      <div class="contact-panel">
-        <p>
-          The project history, code, and ongoing work are available through the
-          GitHub profile linked below.
-        </p>
-
+    <section class="section--contact" id="contact">
+      <div class="contact-bg-grid"></div>
+      <div class="contact-diagonal"></div>
+      <div class="contact-content">
+        <div class="section-badge section-badge--dark">
+          <span class="badge-line badge-line--amber"></span
+          ><span class="eyebrow eyebrow--light">{{ copy().contact.eyebrow }}</span>
+        </div>
+        <h2 class="heading--light">{{ copy().contact.title }}</h2>
+        <p class="text--light">{{ copy().contact.text }}</p>
         <div class="contact-links">
           @for (item of contactLinks; track item.label) {
-            <a [href]="item.href" target="_blank" rel="noreferrer">
-              {{ item.label }}
-            </a>
+            <a class="button button--outline" [href]="item.href" target="_blank" rel="noreferrer">{{
+              item.label
+            }}</a>
           }
         </div>
       </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://romulo.is-a.dev/sitemap.xml

@@ -34,6 +34,7 @@ yarn-error.log
 .sass-cache/
 /connect.lock
 /coverage
+/test-results/
 /libpeerconnection.log
 testem.log
 /typings
@@ -42,3 +43,13 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Local AI, agent, and code-index tooling
+/.agents/
+/.codex/
+/.codegraph/
+/.cursor/
+/.reasonix/
+
+# Internal reports and planning documents
+/docs/
